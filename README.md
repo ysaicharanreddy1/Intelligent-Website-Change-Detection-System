@@ -1,29 +1,21 @@
-# WebPulse Monitor (Intelligent Website Change Detection System)
+# Intelligent Website Change Detection System
 
-![WebPulse Monitor](https://img.shields.io/badge/Status-Active-success)
-![Python Version](https://img.shields.io/badge/Python-3.x-blue)
-![Flask](https://img.shields.io/badge/Framework-Flask-black?logo=flask)
-![SQLite](https://img.shields.io/badge/Database-SQLite-blue?logo=sqlite)
+This project is an intelligent, automated website change detection system. It allows users to continuously monitor any URL, fetching its latest content and automatically detecting modifications. So, basically we give the website URL. It shows the previous version and the new changed version after any changes are made in that particular website. It also stores the changes which are done in that website.
 
-**WebPulse Monitor** is an intelligent, automated website change detection system. It allows users to continuously monitor any URL, fetching its latest content and automatically detecting modifications. Built with a robust **Flask API backend** and a modern, aesthetically pleasing frontend, this tool features accurate change classification, visual word-level diff tracking, and persistent history tracking.
-
-## 🚀 Key Features
+## Key Features
 
 * **Automated & Manual Polling**: Start an automated polling loop or manually trigger checks whenever you need.
-* **Intelligent Change Classification**: Automatically classifies changes as **Minor** or **Major** based on content modification thresholds.
-* **Word-Level Diff Visualization**: See exactly what changed! Added text is highlighted in green, and removed text is highlighted in red, allowing for quick visual analysis.
+* **Intelligent Change Classification**: Automatically classifies changes as **Minor** or **Major** changes based on content modifications.
 * **Persistent History Tracking**: Uses a SQLite database to track every attempt, capturing timestamps, specific text changes, and difference reports for later review.
 * **Dual Interface View**: Side-by-side splitting clearly illustrates the 'Previous State' vs 'Current State' of the targeted URL.
-* **Modern & Responsive UI**: Glassmorphism design elements alongside clean dashboard status cards make user experience seamless and elegant.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Backend**: Python 3, Flask, built-in libraries (`requests`, `sqlite3`, `difflib`)
-* **Frontend**: Vanilla JavaScript (ES6), HTML5, CSS3 
+* **Frontend**: JavaScript, HTML, CSS 
 * **Database**: SQLite (persisted in `/data/history.db`)
-* **Fonts**: Google Fonts (Inter)
 
-## 📋 Prerequisites
+## Prerequisites
 
 Ensure you have Python installed on your local machine. You will also need `pip` for package management.
 
@@ -58,7 +50,7 @@ Ensure you have Python installed on your local machine. You will also need `pip`
    ```
    The server will start on `http://127.0.0.1:5000/`.
 
-## 💻 Usage Instructions
+## Usage Instructions
 
 1. Open your browser and navigate to `http://127.0.0.1:5000/`.
 2. Enter the absolute URL of the website you want to monitor (e.g., `https://example.com`) into the input field.
