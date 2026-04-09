@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Monitor History</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .history-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .history-item {
+            display: block;
+            padding: 1.5rem;
+            text-align: left;
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        .history-item:hover {
+            transform: scale(1.01);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .badge-attempt {
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-weight: 800;
+            margin-right: 10px;
+        }
+
+        .badge-date, .badge-time {
+            background-color: var(--bg-main);
+            border: 1px solid var(--border-glass);
+            color: var(--text-secondary);
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin-right: 10px;
+        }
+
+        .meta-data {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        .url-header {
+            color: #fff;
+            margin-bottom: 10px;
+            font-family: inherit;
+        }
+
+        .changes-content {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #f8fafc;
+            border-left: 4px solid var(--warning);
+            word-break: break-word;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            color: var(--accent-blue-hover);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-wrapper">
+    <header class="app-header">
+        <div class="logo">
+            <span class="icon">📜</span>
+            <h1>Monitor <span class="badge">History</span></h1>
+        </div>
+        <p class="subtitle">Complete chronological record of all website modifications.</p>
+    </header>
+
+    <main class="main-content">
+        <ul class="history-list">
+            {% if records %}
+                {% for row in records %}
+                    <li class="glass-panel history-item">
+                        <h4 class="url-header">🔗 {{ row.url }}</h4>
+                        <div class="meta-data">
+                            <span class="badge-attempt">Attempt {{ row.attempt }}</span>
+                            <span class="badge-date">📅 {{ row.date }}</span>
+                            <span class="badge-time">⏰ {{ row.time }}</span>
+                        </div>
+                        <div class="changes-content">
+                            {{ row.specific_changes }}
+                        </div>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <div class="glass-panel no-data">
+                    <p>No history recorded yet! Start polling a URL from the homepage.</p>
+                </div>
+            {% endif %}
+        </ul>
+        
+        <div style="text-align: center;">
+            <a href="/" class="nav-link">← Return to Dashboard</a>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebPulse API Monitor</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- Dynamic Notification Popups -->
+<div id="toast-container" class="toast-container"></div>
+
+<div class="app-wrapper">
+    <header class="app-header">
+        <div class="logo">
+            <span class="icon">⚡</span>
+            <h1>WebPulse <span class="badge">Monitor</span></h1>
+        </div>
+        <p class="subtitle">Automated aesthetic change detection and history tracker.</p>
+    </header>
+
+    <main class="main-content">
+        <!-- Input Section -->
+        <section class="control-panel glass-panel">
+            <div class="input-group">
+                <input type="url" id="url" placeholder="https://example.com" autocomplete="off" required>
+                <button onclick="startAutoCheck()" id="startBtn" class="btn primary-btn">
+                    <span class="btn-text">Start Polling</span>
+                    <span class="pulse-ring"></span>
+                </button>
+                <button onclick="checkWebsiteNow()" id="checkNowBtn" class="btn secondary-btn">
+                    Check Now
+                </button>
+                <button onclick="window.open('/history', '_blank')" class="btn secondary-btn">
+                    History
+                </button>
+            </div>
+            <div id="alertBox" class="alert-box hidden"></div>
+        </section>
+
+        <!-- Status Dashboard -->
+        <section class="dashboard-grid">
+            <div class="dashboard-card status-card">
+                <div class="card-icon status-icon">📡</div>
+                <div class="card-info">
+                    <h3>Current Status</h3>
+                    <p id="status-txt" class="highlight">Awaiting Input...</p>
+                </div>
+            </div>
+
+            <div class="dashboard-card status-card">
+                <div class="card-icon change-icon">🔄</div>
+                <div class="card-info">
+                    <h3>Change Type</h3>
+                    <p id="change-txt" class="highlight">-</p>
+                </div>
+            </div>
+
+            <div class="dashboard-card status-card">
+                <div class="card-icon time-icon">⏱️</div>
+                <div class="card-info">
+                    <h3>Last Fetched</h3>
+                    <p id="time-txt" class="highlight">-</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Differences Visualizer -->
+        <section class="diff-section">
+            <div class="panel glass-panel">
+                <div class="panel-header">
+                    <h2>📝 Analysis Output (Diff)</h2>
+                </div>
+                <div id="diff" class="code-view code-diff">Awaiting data...</div>
+            </div>
+        </section>
+
+        <!-- Content Split View -->
+        <section class="split-view">
+            <div class="panel glass-panel split-panel">
+                <div class="panel-header">
+                    <h2>🕰️ Previous State</h2>
+                </div>
+                <pre id="old" class="code-view">Waiting...</pre>
+            </div>
+
+            <div class="panel glass-panel split-panel new-state">
+                <div class="panel-header">
+                    <h2>✨ Current State</h2>
+                </div>
+                <pre id="new" class="code-view">Waiting...</pre>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
