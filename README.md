@@ -83,8 +83,3 @@ WebPulse-Monitor/
 ├── .gitignore              # Ignored files (e.g., venv, pycache, history.db)
 └── README.md               
 ```
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-Feel free to check [issues page](https://github.com/yourusername/Intelligent-Website-Change-Detection-System/issues) if you want to contribute.
