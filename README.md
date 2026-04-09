@@ -88,7 +88,3 @@ WebPulse-Monitor/
 
 Contributions, issues, and feature requests are welcome!
 Feel free to check [issues page](https://github.com/yourusername/Intelligent-Website-Change-Detection-System/issues) if you want to contribute.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
