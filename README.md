@@ -71,17 +71,17 @@ Ensure you have Python installed on your local machine. You will also need `pip`
 ```
 WebPulse-Monitor/
 │
-├── app.py                  # Main Flask application and API endpoints
+├── app.py                  
 ├── data/
 │   └── history.db          # Auto-generated SQLite database
 ├── static/
-│   ├── style.css           # Modern stylesheet (Glassmorphism, Layouts)
-│   └── script.js           # Frontend logic, polling logic, DOM manipulation
+│   ├── style.css           
+│   └── script.js           
 ├── templates/
-│   ├── index.html          # Main User Dashboard
-│   └── history.html        # Historical records table view
+│   ├── index.html          
+│   └── history.html        
 ├── .gitignore              # Ignored files (e.g., venv, pycache, history.db)
-└── README.md               # Project documentation
+└── README.md               
 ```
 
 ## 🤝 Contributing
