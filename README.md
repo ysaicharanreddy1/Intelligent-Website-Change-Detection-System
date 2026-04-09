@@ -21,7 +21,7 @@ Ensure you have Python installed on your local machine. You will also need `pip`
 
 * [Python 3.7+](https://www.python.org/downloads/)
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 1. **Clone the repository**
    ```bash
@@ -53,7 +53,7 @@ Ensure you have Python installed on your local machine. You will also need `pip`
 ## Usage Instructions
 
 1. Open your browser and navigate to `http://127.0.0.1:5000/`.
-2. Enter the absolute URL of the website you want to monitor (e.g., `https://example.com`) into the input field.
+2. Open new terminal and then type under test.html "python -m http.server 8000" and then open `http://127.0.0.1:8000/test.html`. Now, come back to VS code and     make changes in test.html and view the website monitoring webpage, what happens in the project. 
 3. Click **Check Now** to perform a one-time scrape and difference check.
 4. Click **Start Polling** to continuously monitor the target URL. 
 5. To view previously captured changes, click the **History** button. You can browse through different snapshots and see specific granular text deviations!
