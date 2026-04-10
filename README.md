@@ -75,3 +75,6 @@ WebPulse-Monitor/
 ├── .gitignore              # Ignored files (e.g., venv, pycache, history.db)
 └── README.md               
 ```
+## Deployed on vercel app
+
+Link : `https://website-monitor-cis.vercel.app/`
