@@ -7,11 +7,14 @@ import difflib
 
 app = Flask(__name__)
 
-DB_FILE = "data/history.db"
+# Determine if we are running on Vercel
+IS_VERCEL = os.environ.get('VERCEL') == '1'
+DB_FILE = "/tmp/history.db" if IS_VERCEL else "data/history.db"
 
 # Ensure DB exists and is initialized
 def init_db():
-    os.makedirs("data", exist_ok=True)
+    if not IS_VERCEL:
+        os.makedirs("data", exist_ok=True)
     conn = sqlite3.connect(DB_FILE)
     c = conn.cursor()
     c.execute('''
