@@ -2,12 +2,6 @@
 
 This project is an intelligent, automated website change detection system. It allows users to continuously monitor any URL, fetching its latest content and automatically detecting modifications. So, basically we give the website URL. It shows the previous version and the new changed version after any changes are made in that particular website. It also stores the changes which are done in that website.
 
-## Key Features
-
-* **Automated & Manual Polling**: Start an automated polling loop or manually trigger checks whenever you need.
-* **Intelligent Change Classification**: Automatically classifies changes as **Minor** or **Major** changes based on content modifications.
-* **Persistent History Tracking**: Uses a SQLite database to track every attempt, capturing timestamps, specific text changes, and difference reports for later review.
-* **Dual Interface View**: Side-by-side splitting clearly illustrates the 'Previous State' vs 'Current State' of the targeted URL.
 
 ## Tech Stack
 
