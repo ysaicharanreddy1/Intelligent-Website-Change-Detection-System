@@ -9,11 +9,6 @@ This project is an intelligent, automated website change detection system. It al
 * **Frontend**: JavaScript, HTML, CSS 
 * **Database**: SQLite (persisted in `/data/history.db`)
 
-## Prerequisites
-
-Ensure you have Python installed on your local machine. You will also need `pip` for package management.
-
-* [Python 3.7+](https://www.python.org/downloads/)
 
 ## Installation & Setup
 
